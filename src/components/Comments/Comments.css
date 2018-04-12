@@ -1,0 +1,16 @@
+
+.CommentsDiv {
+  height: 80px;
+  width: 460px;
+  background-color: rgb(245, 245, 245);
+  overflow-y: scroll;
+}
+
+
+.CommentsDiv::-webkit-scrollbar {
+  background-color: rgb(200, 200, 200);
+}
+
+.CommentsDiv::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,.4);
+}
