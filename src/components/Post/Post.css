@@ -9,11 +9,87 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
-
 }
 
 .postPhoto {
   width: 440px;
   height: 280px;
+}
+
+.PostHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 0px;
+  width: 440px;
+  height: 60px;
+}
+
+.PostHeader h4 {
+  margin: 0;
+}
+
+.PostHeader p {
+  margin-left: 135px;
+}
+.PosterThumbnail {
+  height: 50px;
+  width: 50px;
+  margin: 0 20px;
+  border-radius: 30px;
+}
+
+
+.PostUI {
+  margin-top: 5px;
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  height: 40px;
+  width: 440px;
+
+}
+
+.HeartGen {
+  margin-left: 15px;
+  font-size: 30px;
+}
+
+.HeartGen:hover {
+  cursor: pointer;
+  transform: scale(1.11);
+}
+
+.EmptyHeart {
+  color: gray;
+}
+
+.RedHeart {
+  color: rgb(255, 93, 102);
+}
+
+.commentButton {
+  height: 30px;
+  width: 200px;
+  border-radius: 10px;
+  /* background-color: rgb(255, 199, 65); */
+  border: 2px solid #008eed;
+
+  font-size: 20px;
+  color: #008eed;
+
+  margin-left: 75px;
+}
+
+.commentButton:focus {
+  outline: none;
+}
+
+.commentButton:hover {
+  cursor: pointer;
 }

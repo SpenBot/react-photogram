@@ -25,7 +25,8 @@ class Post extends Component {
   constructor() {
     super()
     this.state = {
-      showComments: false
+      showComments: false,
+      heart: false
     }
   }
 
@@ -40,24 +41,51 @@ class Post extends Component {
   }
 
 
+//// TOGGLE HEART /////////////////////////////////////////////////
+
+  toggleHeart = () => {
+    this.setState(prevState => ({
+      heart: !prevState.heart
+    }))
+  }
+
 
 //// RENDER //////////////////////////////////////////////////////////////
   render() {
 
-    let photo = `../../${this.props.post.photo}`
+    // let photo = `../../${this.props.post.photo}`
+    let photo = this.props.post.photo
+
+    let heart = null
+
+    if (!this.state.heart) {
+      heart = <p className="EmptyHeart HeartGen" onClick={this.toggleHeart}>&#9829;</p>
+    } else {
+      heart = <p className="RedHeart HeartGen" onClick={this.toggleHeart}>&#9829;</p>
+    }
 
 //// RETURN //////////////////////////////////////////////////////////////
     return (
       <div className="PostDiv">
-        <h4>AUTHOR: {this.props.post.author}</h4>
+
+
+        <div className="PostHeader">
+          <img className="PosterThumbnail" src={this.props.post.author.thumbnail} alt={this.props.post.author.name} />
+          <h4>{this.props.post.author.name}</h4>
+          <p>{this.props.post.time}</p>
+        </div>
+
+
         <img className="postPhoto" src={photo} alt="post"/>
-        <p>TITLE: {this.props.post.title}</p>
 
-        <button onClick={this.toggleShow} className='waves-effect waves-light btn'>
 
-          { this.state.showComments ? 'Hide Comments' : 'Show Comments' }
+        <div className="PostUI" >
+          {heart}
+          <button className="commentButton" onClick={this.toggleShow} >
+            { this.state.showComments ? 'Hide Comments' : 'Show Comments' }
+          </button>
+        </div>
 
-        </button>
 
         { this.state.showComments && <Comments comments={this.props.post.comments} /> }
 

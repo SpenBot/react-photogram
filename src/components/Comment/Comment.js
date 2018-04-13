@@ -26,8 +26,8 @@ class Comment extends Component {
 //// RETURN //////////////////////////////////////////////////////////////
     return (
       <div className="CommentDiv">
-        <p>poster: {this.props.comment.author}</p>
-        <p>comment: {this.props.comment.body}</p>
+        <strong>{this.props.comment.author}:</strong>
+        <p>{this.props.comment.body}</p>
       </div>
     );
   }

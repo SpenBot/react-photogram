@@ -1,0 +1,11 @@
+.NewFormDiv {
+  height: 200px;
+  width: 200px;
+
+  font-size: 18px;
+  margin: 160px 0 0 50px;
+  position: fixed;
+
+  background-color: white;
+  box-shadow: 3px 3px 3px rgb(80, 80, 80)
+}
